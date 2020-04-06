@@ -50,7 +50,7 @@
 				text-align: center;
 			}
 			
-			select, submit {
+			select, input {
 				font-size: 50px;
 			}
 			
