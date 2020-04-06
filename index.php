@@ -1,5 +1,5 @@
 <?php
-	$myfile = fopen("status.txt", "r") or die("Unable to open file!");
+	$myfile = fopen("status/file/status.txt", "r") or die("Unable to open file!");
 	$status =  trim(fread($myfile,filesize("status.txt")));
 	fclose($myfile);
 ?>
