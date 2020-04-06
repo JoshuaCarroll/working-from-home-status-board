@@ -2,9 +2,19 @@
 	// Read querystring
 	$status = htmlspecialchars($_GET["status"]);
 	
+
+	$dir = 'file';
+
+	// create new directory with 744 permissions if it does not exist yet
+	// owner will be the user/group the PHP script is run under
+	if ( !file_exists($dir) ) {
+		mkdir ($dir, 0744);
+	}
+	$filename = $dir.'/status.txt';
+	file_put_contents ($filename, 'available');
 	if ($status != null) {
 		// Write status into file
-		$myfile = fopen("status.txt", "w") or die("Unable to open file! (Status = '" . $status . "')");
+		$myfile = fopen($filename, "w") or die("Unable to open file!");
 		fwrite($myfile, $status);
 	}
 	
