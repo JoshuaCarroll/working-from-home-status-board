@@ -133,7 +133,7 @@ To change the status, set focus on the rendered page below, then press m, r, ent
 		</section>
 		
 		<script type="text/javascript">
-			setStatus(<?= $status ?>);
+			setStatus("<?= $status ?>");
 		</script>
 	</body>
 </html>
