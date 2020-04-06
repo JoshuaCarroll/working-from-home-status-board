@@ -1,18 +1,8 @@
 <?php
 	// Read querystring
 	$status = htmlspecialchars($_GET["status"]);
-	
 
-	$dir = 'file';
-
-	// create new directory with 744 permissions if it does not exist yet
-	// owner will be the user/group the PHP script is run under
-	if ( !file_exists($dir) ) {
-		mkdir ($dir, 0744);
-	}
-
-	$filename = $dir.'\status.txt';
-	file_put_contents ($filename, '');
+	$filename = 'status.txt';
 
 	if ($status != null) {
 		// Write status into file
