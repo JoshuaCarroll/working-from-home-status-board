@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="refresh" content="60">
+		<meta http-equiv="refresh" content="30">
 		<title>Status</title>
 		<script src="jquery.min.js"></script>
 		<style>
