@@ -50,8 +50,12 @@
 				text-align: center;
 			}
 			
-			select, input {
+			select {
 				font-size: 50px;
+			}
+			
+			input {
+				font-size: 25px;
 			}
 			
 			.available {
