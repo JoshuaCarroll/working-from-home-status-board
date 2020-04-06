@@ -50,6 +50,10 @@
 				text-align: center;
 			}
 			
+			select, submit {
+				font-size: 50px;
+			}
+			
 			.available {
 				
 				color: #006600;
