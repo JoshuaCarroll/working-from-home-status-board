@@ -49,49 +49,34 @@
 				transform: translateX(-50%) translateY(-50%);
 				text-align: center;
 			}
+			
+			.available {
+				
+				color: #006600;
+				background: #000;
+			}
+			.inMeeting {
+				
+				color: #fff;
+				background: #660000;
+			}
+			.recording {
+				
+				color: #fff;
+				background: #bb4800;
+			}
 
 		</style>
 		<script type="text/javascript">
-			$(document).ready(function () {
-				$("body").on("keypress", function () {
-					keyPress(event);
-				});
-			});
-
-			function keyPress(event) {
-				var x = event.which || event.keyCode;
-				console.log(x);
-
-				switch (x) {
-					case 13:
-						setStatus("available");
-						break;
-					case 32:
-					case 109:
-						setStatus("inMeeting");
-						break;
-					case 114:
-						setStatus("recording");
-						break;
-				}
-			}
-
 			function setStatus(status) {
 				$(".body").removeClass("available");
 				$(".body").removeClass("inMeeting");
 				$(".body").removeClass("recording");
-
 				$(".body").addClass(status);
 			}
 		</script>
 	</head>
 	<body>
-<!--
-	
-To change the status, set focus on the rendered page below, then press m, r, enter, or space to change the status dispalyed.
-
--->
-
 		<section class="body available">
 			<div id="both-aligned">
 				<span id="status">
@@ -109,6 +94,7 @@ To change the status, set focus on the rendered page below, then press m, r, ent
 		<script>
 			$(function() {
 				$("#status").val("<?= $status ?>");
+				setStatus("<?= $status ?>");
 			});
 		</script>
 	</body>
