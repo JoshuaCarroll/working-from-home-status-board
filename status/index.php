@@ -2,9 +2,11 @@
 	// Read querystring
 	$status = htmlspecialchars($_GET["status"]);
 	
-	// Write status into file
-	$myfile = fopen("status.txt", "w") or die("Unable to open file!");
-	fwrite($myfile, $status);
+	if ($status != null) {
+		// Write status into file
+		$myfile = fopen("status.txt", "w") or die("Unable to open file! (Status = '" . $status . "')");
+		fwrite($myfile, $status);
+	}
 	
 ?>
 
