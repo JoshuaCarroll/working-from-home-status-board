@@ -1,7 +1,11 @@
 <?php
-	$myfile = fopen("status.txt", "r") or die("Unable to open file!");
-	$status =  trim(fread($myfile,filesize("status.txt")));
-	fclose($myfile);
+	// Read querystring
+	$status = htmlspecialchars($_GET["status"]);
+	
+	// Write status into file
+	$myfile = fopen("status.txt", "w") or die("Unable to open file!");
+	fwrite($myfile, $status);
+	
 ?>
 
 <!DOCTYPE html>
@@ -129,12 +133,22 @@ To change the status, set focus on the rendered page below, then press m, r, ent
 
 		<section class="body available">
 			<div id="both-aligned">
-				<span id="status"></span>
+				<span id="status">
+					<form action="" method="GET">
+						<select name="status" id="status">
+							<option value="available">Available</option>
+							<option value="inMeeting">In a meeting</option>
+							<option value="recording">Recording</option>
+						</select>
+						<input type="submit">
+					</form>
+				</span>
 			</div>
 		</section>
-		
-		<script type="text/javascript">
-			setStatus("<?= $status ?>");
+		<script>
+			$(function() {
+				$("#status").val("<?= $status ?>");
+			});
 		</script>
 	</body>
 </html>
