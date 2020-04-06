@@ -79,7 +79,7 @@
 	<body>
 		<section class="body available">
 			<div id="both-aligned">
-				<span id="status">
+				<span>
 					<form action="" method="GET">
 						<select name="status" id="status">
 							<option value="available">Available</option>
