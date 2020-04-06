@@ -10,8 +10,10 @@
 	if ( !file_exists($dir) ) {
 		mkdir ($dir, 0744);
 	}
-	$filename = $dir.'/status.txt';
-	file_put_contents ($filename, 'available');
+
+	$filename = $dir.'\status.txt';
+	file_put_contents ($filename, '');
+
 	if ($status != null) {
 		// Write status into file
 		$myfile = fopen($filename, "w") or die("Unable to open file!");
