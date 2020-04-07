@@ -32,7 +32,7 @@
 			<div id="both-aligned">
 				<span>
 					<form action="" method="GET">
-						<select name="status" id="status" onchange="this.form.submit()">
+						<select name="status" class="select-css" id="status" onchange="this.form.submit()">
 							<option value="available">Available</option>
 							<option value="inMeeting">In a meeting</option>
 							<option value="recording">Recording</option>
