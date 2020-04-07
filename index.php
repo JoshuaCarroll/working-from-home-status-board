@@ -1,10 +1,3 @@
-<?php
-	$filename = "status.txt";
-	$myfile = fopen($filename, "r") or die("Unable to open file!");
-	$status =  trim(fread($myfile,filesize($filename)));
-	fclose($myfile);
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -89,34 +82,22 @@
 		</style>
 		<script type="text/javascript">
 			$(document).ready(function () {
-				$("body").on("keypress", function () {
-					keyPress(event);
-				});
+				setInterval(function(){ getStatus(); }, 3000);
 			});
-
-			function keyPress(event) {
-				var x = event.which || event.keyCode;
-				console.log(x);
-
-				switch (x) {
-					case 13:
-						setStatus("available");
-						break;
-					case 32:
-					case 109:
-						setStatus("inMeeting");
-						break;
-					case 114:
-						setStatus("recording");
-						break;
-				}
+			
+			var status = "";
+			
+			function getStatus() {
+				$.get( "status_getter.php", function( data ) {
+					status = data;
+					setStatus(status);
+				});
 			}
 
 			function setStatus(status) {
 				$(".body").removeClass("available");
 				$(".body").removeClass("inMeeting");
 				$(".body").removeClass("recording");
-
 				$(".body").addClass(status);
 			}
 		</script>
@@ -133,9 +114,5 @@ To change the status, set focus on the rendered page below, then press m, r, ent
 				<span id="status"></span>
 			</div>
 		</section>
-		
-		<script type="text/javascript">
-			setStatus("<?= $status ?>");
-		</script>
 	</body>
 </html>
