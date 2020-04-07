@@ -23,6 +23,7 @@
 				$(".body").removeClass("available");
 				$(".body").removeClass("inMeeting");
 				$(".body").removeClass("recording");
+				$(".body").removeClass("onTheAir");
 				$(".body").addClass(status);
 			}
 		</script>
@@ -35,6 +36,7 @@
 						<select name="status" class="select-css" id="status" onchange="this.form.submit()">
 							<option value="available">Available</option>
 							<option value="inMeeting">In a meeting</option>
+							<option value="onTheAir">On the air</option>
 							<option value="recording">Recording</option>
 						</select>
 					</form>

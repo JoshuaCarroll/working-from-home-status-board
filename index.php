@@ -53,11 +53,20 @@
 
 			.recording {
 				font-size: 150px;
-				color: #fff;
-				background: #bb4800;
+				color: #006600;
+				background: #000;
 			}
 			.recording #status::after {
 				content: "Recording";
+			}
+			
+			.onTheAir {
+				font-size: 80px;
+				color: #fff;
+				background: #bb4800;
+			}
+			.onTheAir #status::after {
+				content: "On the air (come on in)";
 			}
 
 			.body {
