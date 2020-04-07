@@ -36,9 +36,7 @@
 							<option value="available">Available</option>
 							<option value="inMeeting">In a meeting</option>
 							<option value="recording">Recording</option>
-						</select><br>
-						<br>
-						<input type="submit">
+						</select>
 					</form>
 				</span>
 			</div>
